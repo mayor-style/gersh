@@ -8,7 +8,7 @@ function App() {
    <BrowserRouter>
 
     <Routes>
-      <Route path='/Book'  element={<Book/>}/>
+      <Route path='/'  element={<Book/>}/>
       <Route path='/submit'  element={<BookForm />}/>
     </Routes>
    
