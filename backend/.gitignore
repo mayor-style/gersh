@@ -1,0 +1,4 @@
+# .gitignore in backend folder
+node_modules
+.env
+uploads
