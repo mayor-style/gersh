@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useState, useEffect} from 'react'
 import './book.css'
 import img1 from './assets/1.jpg'
 import img2 from './assets/2.jpg'
@@ -33,41 +33,48 @@ const BookPage = () => {
   hiddenElements.forEach((el)=> observer.observe(el))
 },[])
 
-// navbar animation
-document.addEventListener("DOMContentLoaded", () => {
-  let lastScrollTop = 0;
-  const navbar = document.querySelector(".navbar");
-  const heroSectionHeight = document.querySelector(".heroSec").offsetHeight;
-
-  window.addEventListener("scroll", () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    // Detect scroll direction
-    if (scrollTop > lastScrollTop) {
-      // Scrolling down
-      navbar.style.top = "-50px"; // Adjust according to your navbar height
-    } else {
-      // Scrolling up
-      navbar.style.top = "0";
-    }
-
-    // Apply styles after the hero section
-    if (scrollTop > heroSectionHeight) {
-      navbar.style.backgroundColor = "white";
-      navbar.style.color = "blue";
-    } else {
-      navbar.style.backgroundColor = "";
-      navbar.style.color = "";
-    }
-
-    lastScrollTop = scrollTop;
+const [lastScrollTop, setLastScrollTop] = useState(0);
+  const [navStyles, setNavStyles] = useState({
+    top: '0',
+    backgroundColor: '',
+    color: '',
   });
-});
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const heroSectionHeight = document.querySelector('.heroSecCon').offsetHeight;
+
+      // Detect scroll direction
+      if (scrollTop > lastScrollTop) {
+        // Scrolling down
+        setNavStyles((prevStyles) => ({ ...prevStyles, top: '-50px' }));
+      } else {
+        // Scrolling up
+        setNavStyles((prevStyles) => ({ ...prevStyles, top: '0' }));
+      }
+
+      // Apply styles after the hero section
+      if (scrollTop > heroSectionHeight) {
+        setNavStyles({ top: '0', backgroundColor: 'white', color: 'blue' });
+      } else {
+        setNavStyles({ top: '0', backgroundColor: '', color: '' });
+      }
+
+      setLastScrollTop(scrollTop);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollTop]);
 
  
   return (
     <>
-      <nav>
+      <nav  style={navStyles}>
         <div className="navbar">
           <div className="left">books</div>
           <div className="middle">Gersh</div>
