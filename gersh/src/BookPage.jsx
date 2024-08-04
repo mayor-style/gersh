@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import './book.css'
 import img1 from './assets/1.jpg'
 import img2 from './assets/2.jpg'
@@ -23,6 +23,17 @@ import img20 from './assets/20.jpg'
 import { Link, useNavigate } from 'react-router-dom'
 const BookPage = () => {
   const navigate=useNavigate();
+
+    useEffect(()=>{
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+     if ( entry.isIntersecting) { entry.target.classList.add('show-Img') }
+    });
+  });
+
+  const hiddenElements= document.querySelectorAll('.hidden-Img');
+  hiddenElements.forEach((el)=> observer.observe(el))
+},[])
   return (
     <>
       <nav>
@@ -51,26 +62,26 @@ const BookPage = () => {
      
       </div>
         <div className="bookImgs">
-      <img src={img1} alt="" />
-      <img src={img2} alt="" />
-      <img src={img3} alt="" />
-      <img src={img4} alt="" />
-      <img src={img5} alt="" />
-      <img src={img6} alt="" />
-      <img src={img7} alt="" />
-      <img src={img8} alt="" />
-      <img src={img9} alt="" />
-      <img src={img10} alt="" />
-      <img src={img11} alt="" />
-      <img src={img12} alt="" />
-      <img src={img13} alt="" />
-      <img src={img14} alt="" />
-      <img src={img15} alt="" />
-      <img src={img16} alt="" />
-      <img src={img17} alt="" />
-      <img src={img18} alt="" />
-      <img src={img19} alt="" />
-      <img src={img20} alt="" />
+      <img className="show-Img" src={img1} alt="" />
+      <img className="show-Img" src={img2} alt="" />
+      <img className="show-Img" src={img3} alt="" />
+      <img className="show-Img" src={img4} alt="" />
+      <img className="show-Img" src={img5} alt="" />
+      <img className="show-Img" src={img6} alt="" />
+      <img className="show-Img" src={img7} alt="" />
+      <img className="show-Img" src={img8} alt="" />
+      <img className="show-Img" src={img9} alt="" />
+      <img className="show-Img" src={img10} alt="" />
+      <img className="show-Img" src={img11} alt="" />
+      <img className="show-Img" src={img12} alt="" />
+      <img className="show-Img" src={img13} alt="" />
+      <img className="show-Img" src={img14} alt="" />
+      <img className="show-Img" src={img15} alt="" />
+      <img className="show-Img" src={img16} alt="" />
+      <img className="show-Img" src={img17} alt="" />
+      <img className="show-Img" src={img18} alt="" />
+      <img className="show-Img" src={img19} alt="" />
+      <img className="show-Img" src={img20} alt="" />
         </div>
       </div>
     </section>
