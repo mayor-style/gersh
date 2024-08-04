@@ -4,8 +4,8 @@
 nav{
 
     width: 100%;
-    padding: 40px;
-    font-size: 28px ;
+    padding: 30px 35px;
+    font-size: 27px ;
     font-weight: 700;
     z-index: 10007890;
     position: fixed;
@@ -13,7 +13,7 @@ nav{
 }
 
 .navbar .middle{
-    font-size: 53px;
+    font-size: 52px;
 }
 
 .navbar{
@@ -84,13 +84,13 @@ section{
     color: white;
     font-weight: 550;
     padding-top: 50px;
-    line-height: 44px;
+    line-height: 43px;
     word-spacing: 2px;
 }
 
 .heroSec p{
     font-size: 28px;
-    line-height: 33px;
+    line-height: 32px;
  
 }
 
@@ -127,8 +127,8 @@ section{
 
 @media (max-width:800px){
     nav{
-        font-size: 20px;
-        padding: 20px;
+        font-size: 19px;
+        padding: 15px 18px;
     }
 
     .works .bookImgs{
@@ -148,7 +148,7 @@ section{
         padding: 20px;
     }
     .navbar .middle{
-        font-size: 35px;
+        font-size: 34px;
     }
 
     .heroSec{
@@ -210,6 +210,15 @@ section{
 
 }
 
+  .works .subheading{
+        display: block;
+        font-size: 18px;
+        color: #034491;
+        font-weight: 500;
+        margin-bottom: 50px;
+        line-height: 25px;
+
+    }
 
 .heroSec h2{
     font-size: 31px;
