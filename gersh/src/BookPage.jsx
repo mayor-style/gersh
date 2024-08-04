@@ -34,10 +34,7 @@ const BookPage = () => {
 },[])
 
 const [lastScrollTop, setLastScrollTop] = useState(0);
-  const [navStyles, setNavStyles] = useState({
-    top: '0',
-    backgroundColor: '',
-    color: '',
+  const [navStyles, setNavStyles] = useState({  top: '0'
   });
 
   useEffect(() => {
@@ -45,20 +42,20 @@ const [lastScrollTop, setLastScrollTop] = useState(0);
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       const heroSectionHeight = document.querySelector('.heroSecCon').offsetHeight;
 
+         // Check if we are in the hero section
+      const inHeroSection = scrollTop <= heroSectionHeight;
+
       // Detect scroll direction
       if (scrollTop > lastScrollTop) {
         // Scrolling down
         setNavStyles((prevStyles) => ({ ...prevStyles, top: '-50px' }));
       } else {
         // Scrolling up
-        setNavStyles((prevStyles) => ({ ...prevStyles, top: '0' }));
-      }
-
-      // Apply styles after the hero section
-      if (scrollTop > heroSectionHeight) {
-        setNavStyles({ top: '0', backgroundColor: 'white', color: 'blue' });
-      } else {
-        setNavStyles({ top: '0', backgroundColor: '', color: '' });
+        setNavStyles({
+          top: '0',
+          backgroundColor: inHeroSection ? '' : 'white',
+          color: inHeroSection ? '' : 'purple',
+        });
       }
 
       setLastScrollTop(scrollTop);
