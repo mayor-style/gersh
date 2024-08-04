@@ -4,8 +4,8 @@
 nav{
 
     width: 100%;
-    padding: 50px;
-    font-size: 30px ;
+    padding: 40px;
+    font-size: 28px ;
     font-weight: 700;
     z-index: 10007890;
     position: fixed;
@@ -13,7 +13,7 @@ nav{
 }
 
 .navbar .middle{
-    font-size: 55px;
+    font-size: 53px;
 }
 
 .navbar{
@@ -80,17 +80,17 @@ section{
 }
 
 .heroSec h2{
-    font-size: 40px;
+    font-size: 38px;
     color: white;
     font-weight: 550;
     padding-top: 50px;
-    line-height: 46px;
+    line-height: 44px;
     word-spacing: 2px;
 }
 
 .heroSec p{
-    font-size: 30px;
-    line-height: 35px;
+    font-size: 28px;
+    line-height: 33px;
  
 }
 
@@ -103,7 +103,7 @@ section{
 }
 
 .works{
-    padding: 40px 70px;
+    padding: 30px 50px;
 }
 
 .works .bookImgs{
@@ -127,8 +127,8 @@ section{
 
 @media (max-width:800px){
     nav{
-        font-size: 22px;
-        padding: 25px;
+        font-size: 20px;
+        padding: 20px;
     }
 
     .works .bookImgs{
@@ -145,10 +145,10 @@ section{
     }
     
     .works{
-        padding: 30px;
+        padding: 20px;
     }
     .navbar .middle{
-        font-size: 38px;
+        font-size: 35px;
     }
 
     .heroSec{
@@ -162,8 +162,8 @@ section{
     
 
     .heroSec h2{
-        font-size: 25px;
-        line-height: 34px;
+        font-size: 23px;
+        line-height: 32px;
         padding-top: 50%;
     }
 
@@ -173,11 +173,11 @@ section{
 
     .works .subheading{
         display: block;
-        font-size: 20px;
+        font-size: 18px;
         color: #034491;
         font-weight: 500;
         margin-bottom: 50px;
-        line-height: 27px;
+        line-height: 25px;
 
     }
 
@@ -186,16 +186,16 @@ section{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 50px;
+        gap: 40px;
     }
 
     .works .bookImgs img{
         height: 100%;
-        width: 90%;
+        width: 95%;
     }
 
     .works{
-        padding: 30px;
+        padding: 20px;
     }
 
 }
@@ -212,10 +212,10 @@ section{
 
 
 .heroSec h2{
-    font-size: 33px;
+    font-size: 31px;
     font-weight: 500;
     word-spacing: 0px;
-    line-height: 38px;
+    line-height: 36px;
 }
 .works .bookImgs{
     grid-template-columns: 1fr 1fr 1fr;
