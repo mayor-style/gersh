@@ -22,9 +22,7 @@ import img19 from './assets/19.jpg'
 import img20 from './assets/20.jpg'
 import { Link } from 'react-router-dom'
 const BookPage = () => {
- 
-
-    useEffect(()=>{
+     useEffect(()=>{
   const observer = new IntersectionObserver((entries)=>{
     entries.forEach((entry)=>{
      if ( entry.isIntersecting) { entry.target.classList.add('show-Img') }
@@ -34,6 +32,39 @@ const BookPage = () => {
   const hiddenElements= document.querySelectorAll('.hidden-Img');
   hiddenElements.forEach((el)=> observer.observe(el))
 },[])
+
+// navbar animation
+document.addEventListener("DOMContentLoaded", () => {
+  let lastScrollTop = 0;
+  const navbar = document.querySelector(".navbar");
+  const heroSectionHeight = document.querySelector(".heroSec").offsetHeight;
+
+  window.addEventListener("scroll", () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Detect scroll direction
+    if (scrollTop > lastScrollTop) {
+      // Scrolling down
+      navbar.style.top = "-50px"; // Adjust according to your navbar height
+    } else {
+      // Scrolling up
+      navbar.style.top = "0";
+    }
+
+    // Apply styles after the hero section
+    if (scrollTop > heroSectionHeight) {
+      navbar.style.backgroundColor = "white";
+      navbar.style.color = "blue";
+    } else {
+      navbar.style.backgroundColor = "";
+      navbar.style.color = "";
+    }
+
+    lastScrollTop = scrollTop;
+  });
+});
+
+ 
   return (
     <>
       <nav>
