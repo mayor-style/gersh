@@ -124,6 +124,29 @@ section{
     width: 100%;
 }
 
+.hidden-Img{
+    opacity: 0;
+    transition: all 1s;
+    filter: blur(5px);
+   transform-origin: top;
+    transform:translateY(50%);
+ }
+ 
+ .show-Img{
+     opacity: 1;
+     filter: blur(0);
+     transform: translateY(0%);
+     transform-origin: bottom;
+ }
+ 
+ 
+ 
+ @media (prefers-reduced-motion){
+ .hidden-Img{
+     transition: none;
+ }
+ }
+
 
 @media (max-width:800px){
     nav{
@@ -240,10 +263,7 @@ section{
 .works .bookImgs{
     grid-template-columns: 1fr 1fr 1fr;
 }
-
 }
-
-
 
 @media(max-width:500px){
     .heroSec h2{
