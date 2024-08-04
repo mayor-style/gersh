@@ -48,7 +48,7 @@ const [lastScrollTop, setLastScrollTop] = useState(0);
       // Detect scroll direction
       if (scrollTop > lastScrollTop) {
         // Scrolling down
-        setNavStyles((prevStyles) => ({ ...prevStyles, top: '-50px' }));
+        setNavStyles((prevStyles) => ({ ...prevStyles, top: '-200px' }));
       } else {
         // Scrolling up
         setNavStyles({
