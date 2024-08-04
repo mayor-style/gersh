@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React, {useEffect} from 'react'
 import './book.css'
 import img1 from './assets/1.jpg'
 import img2 from './assets/2.jpg'
@@ -20,9 +20,9 @@ import img17 from './assets/17.jpg'
 import img18 from './assets/18.jpg'
 import img19 from './assets/19.jpg'
 import img20 from './assets/20.jpg'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 const BookPage = () => {
-  const navigate=useNavigate();
+ 
 
     useEffect(()=>{
   const observer = new IntersectionObserver((entries)=>{
@@ -62,26 +62,26 @@ const BookPage = () => {
      
       </div>
         <div className="bookImgs">
-      <img className="show-Img" src={img1} alt="" />
-      <img className="show-Img" src={img2} alt="" />
-      <img className="show-Img" src={img3} alt="" />
-      <img className="show-Img" src={img4} alt="" />
-      <img className="show-Img" src={img5} alt="" />
-      <img className="show-Img" src={img6} alt="" />
-      <img className="show-Img" src={img7} alt="" />
-      <img className="show-Img" src={img8} alt="" />
-      <img className="show-Img" src={img9} alt="" />
-      <img className="show-Img" src={img10} alt="" />
-      <img className="show-Img" src={img11} alt="" />
-      <img className="show-Img" src={img12} alt="" />
-      <img className="show-Img" src={img13} alt="" />
-      <img className="show-Img" src={img14} alt="" />
-      <img className="show-Img" src={img15} alt="" />
-      <img className="show-Img" src={img16} alt="" />
-      <img className="show-Img" src={img17} alt="" />
-      <img className="show-Img" src={img18} alt="" />
-      <img className="show-Img" src={img19} alt="" />
-      <img className="show-Img" src={img20} alt="" />
+      <img className="hidden-Img" src={img1} alt="" />
+      <img className="hidden-Img" src={img2} alt="" />
+      <img className="hidden-Img" src={img3} alt="" />
+      <img className="hidden-Img" src={img4} alt="" />
+      <img className="hidden-Img" src={img5} alt="" />
+      <img className="hidden-Img" src={img6} alt="" />
+      <img className="hidden-Img" src={img7} alt="" />
+      <img className="hidden-Img" src={img8} alt="" />
+      <img className="hidden-Img" src={img9} alt="" />
+      <img className="hidden-Img" src={img10} alt="" />
+      <img className="hidden-Img" src={img11} alt="" />
+      <img className="hidden-Img" src={img12} alt="" />
+      <img className="hidden-Img" src={img13} alt="" />
+      <img className="hidden-Img" src={img14} alt="" />
+      <img className="hidden-Img" src={img15} alt="" />
+      <img className="hidden-Img" src={img16} alt="" />
+      <img className="hidden-Img" src={img17} alt="" />
+      <img className="hidden-Img" src={img18} alt="" />
+      <img className="hidden-Img" src={img19} alt="" />
+      <img className="hidden-Img" src={img20} alt="" />
         </div>
       </div>
     </section>
