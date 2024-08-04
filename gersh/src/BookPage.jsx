@@ -71,8 +71,8 @@ const [lastScrollTop, setLastScrollTop] = useState(0);
  
   return (
     <>
-      <nav >
-        <div   style={navStyles} className="navbar">
+      <nav style={navStyles}>
+        <div className="navbar">
           <div className="left">books</div>
           <div className="middle">Gersh</div>
           <div className="right">menu</div>
