@@ -32,6 +32,11 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
+
+app.get('/', (req, res)=>{
+    res.send('Welcome to home Page!')
+})
+
 // API endpoint to handle form submission
 app.post('/submit', upload.single('file'), (req, res) => {
     const { name, email, phone, title, genre, synopsis, notes } = req.body;
