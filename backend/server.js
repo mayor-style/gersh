@@ -11,7 +11,7 @@ app.use('/uploads', express.static('uploads'));
 
 // Set up MySQL connection using environment variables
 const db = mysql.createConnection({
-    host: process.env.DATABASE_HOST || '8.8.8.8',
+    host: process.env.DATABASE_HOST || 'sql312.infinityfree.com',
     user: process.env.DATABASE_USER || 'if0_37068746',
     password: process.env.DATABASE_PASSWORD || 'SlickySlicky',
     database: process.env.DATABASE_NAME || 'if0_37068746_Gersh'
