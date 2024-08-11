@@ -18,7 +18,7 @@ const db = mysql.createConnection({
 });
 
 db.connect(err => {
-    if (err) return console.error("error connecting to database:", err.message);
+    if (err) return console.error("error connecting to database:", err.message, err.stack);
     console.log('MySQL connected...');
 });
 
@@ -61,4 +61,4 @@ app.post('/submit', upload.single('file'), (req, res) => {
 
 // Start the server
 const PORT = process.env.PORT || 8000;
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+app.listen(PORT, () => console.log(`Server started on port ${PORT}!`));
