@@ -35,7 +35,8 @@ app.post('/submit', upload.single('file'), async (req, res) => {
 
   try {
     const spreadsheetId = '1a7aHzCYfbP2J_N2IrNhRskfWpcAy8Mp-qQKxsdNf8RQ'; // Replace with your actual Google Sheets ID
-    const range = 'Sheet1!A1'; // Adjust range as needed
+ const range = 'Sheet1!A:H'; // Automatically appends data starting from the first available row in columns A to H
+
     await appendData(spreadsheetId, range, values);
     res.send('Submission successful!');
   } catch (error) {
