@@ -41,7 +41,7 @@ const BookForm = () => {
     });
 
     try {
-      await axios.post('http://localhost:8000/submit', data, {
+      await axios.post('https://gersh.onrender.com/submit', data, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
