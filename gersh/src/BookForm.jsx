@@ -40,24 +40,25 @@ const BookForm = () => {
       data.append(key, formData[key]);
     });
 
-    try {
-      await axios.post('https://gersh.onrender.com/submit', data, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      });
-      alert('Submission successful!');
-      
-      setTimeout(()=>{
-        setNotify('Submitted! Within 24 to 48 hours you should get a feedback from us via email.')
-    },1000)
-    navigate('/book')
-    
-    
-    } catch (error) {
-      console.error('There was an error submitting the form!', error.message);
-    }
-  };
+try {
+  console.log("hello there")
+  const response = await axios.post('https://gersh.onrender.com/submit', data, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
+  });
+
+  if (response.status === 200) {
+    alert('Submission successful!');
+    setNotify('Submitted! Within 24 to 48 hours you should get a feedback from us via email.');
+    navigate('/book');
+  } else {
+    console.error('Submission failed with status:', response.status);
+  }
+} catch (error) {
+  console.error('There was an error submitting the form:', error.message);
+}
+
 
   return (
     <>
