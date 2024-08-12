@@ -23,6 +23,10 @@ app.get('/', (req, res) => {
   res.send('Welcome to home Page!');
 });
 
+
+app.get('/submit', (req, res)=>{
+  res.send('submit page')
+});
 // API endpoint to handle form submission
 app.post('/submit', upload.single('file'), async (req, res) => {
   const { name, email, phone, title, genre, synopsis, notes } = req.body;
