@@ -93,7 +93,9 @@ const [lastScrollTop, setLastScrollTop] = useState(0);
     <section>
       <div className="works">
       <div className="subheading">
-        <p>We work closely with our clients throughout all aspects of the publishing process, and advocate to develop and set up their intellectual property across film, television, documentaries, podcasts, and other media platforms.</p>
+        <p>We work closely with our clients throughout all aspects of the publishing process, and advocate to develop and set up their intellectual property across film, television, documentaries, podcasts, and other media platforms. <br/>
+        
+        </p>
      
       </div>
         <div className="bookImgs">
