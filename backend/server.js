@@ -1,53 +1,61 @@
+require('dotenv').config()
 const express = require('express');
 const cors = require('cors');
 const multer = require('multer');
-const path = require('path');
-const { appendData } = require('./googleSheets');
+const nodemailer = require('nodemailer');
+
 const app = express();
-
 app.use(cors());
-app.use(express.json());
-app.use('/uploads', express.static('uploads'));
+const user=process.env.EMAIL_USER
+// Set up Multer for handling file uploads
+const upload = multer({ storage: multer.memoryStorage() }); // Using memory storage to keep the file in buffer
 
-// Multer setup for file uploads
-const storage = multer.diskStorage({
-  destination: './uploads/',
-  filename: function (req, file, cb) {
-    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
-  }
+// Nodemailer transport setup
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: process.env.EMAIL_USER || 'teslimshehu17@gmail.com', // Your email address
+        pass: process.env.EMAIL_PASS  ||  'sucespvmfvfdnirn', // Your email password
+    },
 });
 
-const upload = multer({ storage: storage });
-
-app.get('/', (req, res) => {
-  res.send('Welcome to home Page!');
-});
-
-
-app.get('/submit', (req, res)=>{
-  res.send('submit page')
-});
-// API endpoint to handle form submission
 app.post('/submit', upload.single('file'), async (req, res) => {
-  const { name, email, phone, title, genre, synopsis, notes } = req.body;
-  const file_path = req.file.path;
+    const { name, email, phone, title, genre, synopsis, notes } = req.body;
+    const file = req.file; // The uploaded file
 
-  // Prepare data to append to Google Sheets
-  const values = [
-    [name, email, phone, title, genre, synopsis, file_path, notes]
-  ];
+    // Prepare the email content
+    const mailOptions = {
+        from: process.env.EMAIL_USER || 'teslimshehu17@gmail.com' ,
+        to: process.env.EMAIL_USER  || 'teslimshehu17@gmail.com', // Sending to the same email
+        subject: 'New Book Submission',
+        text: `You have received a new book submission:
 
-  try {
-    const spreadsheetId = '1a7aHzCYfbP2J_N2IrNhRskfWpcAy8Mp-qQKxsdNf8RQ'; // Replace with your actual Google Sheets ID
- const range = 'Sheet1!A:H'; // Automatically appends data starting from the first available row in columns A to H
+        Full Name: ${name}
+        Email Address: ${email}
+        Phone Number: ${phone}
+        Book Title: ${title}
+        Genre: ${genre}
+        Synopsis: ${synopsis}
+        Additional Notes: ${notes}`,
+        attachments: [
+            {
+                filename: file.originalname,
+                content: file.buffer, // The file content is stored in memory
+            },
+        ],
+    };
 
-    await appendData(spreadsheetId, range, values);
-    res.send('Submission successful!');
-  } catch (error) {
-    res.status(500).send('Error submitting data');
-  }
+    try {
+        await transporter.sendMail(mailOptions);
+        res.status(200).send('Submission successful!');
+    } catch (error) {
+        console.error('Error sending email:', error);
+        res.status(500).send('Error submitting data');
+    }
 });
 
-// Start the server
+console.log(user)
 const PORT = process.env.PORT || 8000;
-app.listen(PORT, () => console.log(`Server started on port ${PORT}!`));
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
