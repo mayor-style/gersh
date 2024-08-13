@@ -29,7 +29,12 @@ form {
     margin: 10px 0;
     border: dotted 1px;
     padding: 20px;
+    max-width: 100%;
     border-radius: 5px;
+  }
+
+  .notify{
+    margin: 15px 0px;
   }
   
   button[type="submit"] {
@@ -57,13 +62,14 @@ form {
   /* General styling for the container */
   .container {
     padding: 50px 20px;
+    background-color: #0056b3;
     font-family: Arial, sans-serif;
   }
   
   /* Styling for headings */
-  h1  {
+  .container h1  {
     text-align: center;
-    color: #333;
+    color: white;
   }
 
   @media(max-width:500px){

@@ -93,7 +93,8 @@ const [lastScrollTop, setLastScrollTop] = useState(0);
     <section>
       <div className="works">
       <div className="subheading">
-        <p>We work closely with our clients throughout all aspects of the publishing process, and advocate to develop and set up their intellectual property across film, television, documentaries, podcasts, and other media platforms. <br/>
+        <p>We work closely with our clients throughout all aspects of the publishing process, and advocate to develop and set up their intellectual property across film, television, documentaries, podcasts, and other media platforms. 
+          <br />Follow On <strong> <a href="https://www.instagram.com/gershbooks/">Instagram</a></strong>
         
         </p>
      
