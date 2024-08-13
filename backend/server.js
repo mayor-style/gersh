@@ -14,8 +14,8 @@ const upload = multer({ storage: multer.memoryStorage() }); // Using memory stor
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: process.env.EMAIL_USER || 'teslimshehu17@gmail.com', // Your email address
-        pass: process.env.EMAIL_PASS  ||  'sucespvmfvfdnirn', // Your email password
+        user: process.env.EMAIL_USER || 'mayormento11234@gmail.com', // Your email address
+        pass: process.env.EMAIL_PASS  ||  'zjxfpuutadvqlehg', // Your email password
     },
 });
 
@@ -25,8 +25,8 @@ app.post('/submit', upload.single('file'), async (req, res) => {
 
     // Prepare the email content
     const mailOptions = {
-        from: process.env.EMAIL_USER || 'teslimshehu17@gmail.com' ,
-        to: process.env.EMAIL_USER  || 'teslimshehu17@gmail.com', // Sending to the same email
+        from: process.env.EMAIL_USER || 'mayormento11234@gmail.com' ,
+        to: process.env.EMAIL_USER  || 'mayormento11234@gmail.com', // Sending to the same email
         subject: 'New Book Submission',
         text: `You have received a new book submission:
 
@@ -54,7 +54,6 @@ app.post('/submit', upload.single('file'), async (req, res) => {
     }
 });
 
-console.log(user)
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
