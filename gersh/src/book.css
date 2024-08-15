@@ -4,8 +4,8 @@
 nav{
 
     width: 100%;
-    padding: 22px 31px;
-    font-size: 24px;
+    padding: 21px 30px;
+    font-size: 23px;
     font-weight: 550;
     z-index: 10007890;
     top:0;
@@ -16,7 +16,7 @@ nav{
 }
 
 .navbar .middle{
-    font-size: 44px;
+    font-size: 43px;
 }
 
 .navbar{
@@ -153,8 +153,8 @@ section{
 
 @media (max-width:800px){
     nav{
-        font-size: 15px;
-        padding: 13px 16px;
+        font-size: 14px;
+        padding: 12px 15px;
     }
 
     .works .bookImgs{
@@ -174,7 +174,7 @@ section{
         padding: 20px;
     }
     .navbar .middle{
-        font-size: 28px;
+        font-size: 26px;
     }
 
     .heroSec{
@@ -234,12 +234,12 @@ section{
 @media(max-width:1100px){
 
   nav{
-        font-size: 22px;
-        padding: 15px 18px;
+        font-size: 21px;
+        padding: 14px 17px;
     }
 
      .navbar .middle{
-        font-size: 33px;
+        font-size: 32px;
     }
 
     
