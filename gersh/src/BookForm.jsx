@@ -47,7 +47,7 @@ const BookForm = () => {
         setNotify('Submitted! Within 24 to 48 hours you should get a feedback from us via email!');
         setTimeout(() => {
         navigate('/');
-        }, 5000);
+        }, 3500);
       } else {
         console.error('Submission failed with status:', response.status);
         setNotify('Submission failed, please try again later!');
