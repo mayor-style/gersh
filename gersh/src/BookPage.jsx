@@ -100,26 +100,26 @@ const [lastScrollTop, setLastScrollTop] = useState(0);
      
       </div>
         <div className="bookImgs">
-      <img className="hidden-Img" src={img1} alt="" />
-      <img className="hidden-Img" src={img2} alt="" />
-      <img className="hidden-Img" src={img3} alt="" />
-      <img className="hidden-Img" src={img4} alt="" />
-      <img className="hidden-Img" src={img5} alt="" />
-      <img className="hidden-Img" src={img6} alt="" />
-      <img className="hidden-Img" src={img7} alt="" />
-      <img className="hidden-Img" src={img8} alt="" />
-      <img className="hidden-Img" src={img9} alt="" />
-      <img className="hidden-Img" src={img10} alt="" />
-      <img className="hidden-Img" src={img11} alt="" />
-      <img className="hidden-Img" src={img12} alt="" />
-      <img className="hidden-Img" src={img13} alt="" />
-      <img className="hidden-Img" src={img14} alt="" />
-      <img className="hidden-Img" src={img15} alt="" />
-      <img className="hidden-Img" src={img16} alt="" />
-      <img className="hidden-Img" src={img17} alt="" />
-      <img className="hidden-Img" src={img18} alt="" />
-      <img className="hidden-Img" src={img19} alt="" />
-      <img className="hidden-Img" src={img20} alt="" />
+      <img className="hidden-Img" src={img1} alt="" loading="lazy" />
+      <img className="hidden-Img" src={img2} alt="" loading="lazy" />
+      <img className="hidden-Img" src={img3} alt="" loading="lazy" />
+      <img className="hidden-Img" src={img4} alt="" loading="lazy" />
+      <img className="hidden-Img" src={img5} alt="" loading="lazy" />
+      <img className="hidden-Img" src={img6} alt=""loading="lazy" />
+      <img className="hidden-Img" src={img7} alt=""loading="lazy" />
+      <img className="hidden-Img" src={img8} alt="" loading="lazy"/>
+      <img className="hidden-Img" src={img9} alt=""loading="lazy" />
+      <img className="hidden-Img" src={img10} alt=""loading="lazy" />
+      <img className="hidden-Img" src={img11} alt="" loading="lazy"/>
+      <img className="hidden-Img" src={img12} alt=""loading="lazy" />
+      <img className="hidden-Img" src={img13} alt="" loading="lazy"/>
+      <img className="hidden-Img" src={img14} alt="" loading="lazy"/>
+      <img className="hidden-Img" src={img15} alt=""loading="lazy" />
+      <img className="hidden-Img" src={img16} alt=""loading="lazy" />
+      <img className="hidden-Img" src={img17} alt=""loading="lazy" />
+      <img className="hidden-Img" src={img18} alt=""loading="lazy" />
+      <img className="hidden-Img" src={img19} alt=""loading="lazy" />
+      <img className="hidden-Img" src={img20} alt=""loading="lazy" />
         </div>
       </div>
     </section>
