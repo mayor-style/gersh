@@ -47,7 +47,7 @@ const BookForm = () => {
         setNotify('Submitted! Within 24 to 48 hours you should get a feedback from us via email!');
         setTimeout(() => {
         navigate('/');
-        }, 3500);
+        }, 4500);
       } else {
         console.error('Submission failed with status:', response.status);
         setNotify('Submission failed, please try again later!');
@@ -95,7 +95,7 @@ const BookForm = () => {
           </div>
 
           <textarea name="notes" placeholder="Additional Notes" onChange={handleChange} />
-          <div className="notify"> <strong>{notify}</strong></div>
+          <div className="notify"> <p>{notify}</p></div>
          
           <button type="submit">Submit</button>
         </form>
